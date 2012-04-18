@@ -14,7 +14,7 @@ $plugin_settings = $plugin_entity->getAllSettings();
 if(array_key_exists('recaptcha_verified', $_SESSION) && $_SESSION['recaptcha_verified'] == 1) {
 
     // no need for recaptcha again - user has already entered the correct value previously
-   $output = "<label>".elgg_echo('recaptcha:label:human_verification')."</label><b>Verified</b><br><br>";
+   $output = "<label>".elgg_echo('recaptcha:label:human_verification')."</label><b>".elgg_echo('recaptcha:verified')."</b><br><br>";
 }
 else {
     if($plugin_settings['require_recaptcha'] == 'on') {

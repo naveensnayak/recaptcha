@@ -14,6 +14,7 @@ $english = array(
 	'recaptcha:human_verification_failed' => 'Human Verification Failed.<br>Please enter the correct values for the human verification field<br>
 	    You can get a different challenge by clicking the refresh button indise the image',
     'recaptcha:signup' => 'Please sign up for recaptcha to get you public and private keys at %s',
+    'recaptcha:verified' => 'Verified',
 );
 
 add_translation("en", $english);
