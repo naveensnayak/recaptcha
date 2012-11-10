@@ -21,10 +21,14 @@ else {
 
         // include the recaptcha lib
         require_once(elgg_get_plugins_path() . 'recaptcha/lib/recaptchalib.php');
-
+		
+        // check if http or https 
+        $use_ssl = false;
+        if( isset($_SERVER['HTTPS']) && $_SERVER["HTTPS"] == "on" ) $use_ssl = true; 
+               
         $publickey = $plugin_settings['recaptcha_public_key'];
         $output = "<label>".elgg_echo('recaptcha:label:human_verification')."</label><br>";
-        $output .= recaptcha_get_html($publickey);
+        $output .= recaptcha_get_html($publickey, null, $use_ssl);
         $output .= '<br>';
     }
     else $output = '';
